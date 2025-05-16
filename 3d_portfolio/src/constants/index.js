@@ -19,8 +19,8 @@ import {
     starbucks,
     tesla,
     shopify,
-    carrent,
-    jobit,
+    IFSS,
+    soulmagician,
     tripguide,
     threejs,
   } from "../assets";
@@ -188,68 +188,46 @@ import {
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "IFSS | SWE Course Project",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-      tags: [
+      "Developed tax optimization software with auto-filled ITR forms and CA integration. Implemented AI-based document summarization and secure data management with MongoDB. Built a scalable C++ backend on a Python server using the nlohmann JSON library for efficient data exchange.",      tags: [
         {
-          name: "react",
+          name: "C++",
           color: "blue-text-gradient",
         },
         {
-          name: "mongodb",
+          name: "Python",
           color: "green-text-gradient",
         },
         {
-          name: "tailwind",
+          name: "MongoDB",
           color: "pink-text-gradient",
         },
       ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+      image: IFSS, // Replace with the appropriate image if available
+      source_code_link: "https://github.com/Chimankarparag/IFSS", // Replace with the actual link if available
     },
     {
-      name: "Job IT",
-      description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      name: "2D RPG Game (Soul Magician)",
+      description:"Developed a 2D RPG in Unity with optimized gameplay and intuitive UI for inventory, health, and item interactions. Enhanced visuals using particle effects, dynamic lighting, and smooth camera controls. Implemented complex character animations and responsive mechanics for accessible yet engaging play.",      
       tags: [
         {
-          name: "react",
+          name: "Unity",
           color: "blue-text-gradient",
         },
         {
-          name: "restapi",
+          name: "C#",
           color: "green-text-gradient",
         },
         {
-          name: "scss",
+          name: "Game Development",
           color: "pink-text-gradient",
         },
       ],
-      image: jobit,
-      source_code_link: "https://github.com/",
+      image: soulmagician, // Replace with the appropriate image if available
+      source_code_link: "https://github.com/Chimankarparag/Necromancer", // Replace with the actual link if available
     },
-    {
-      name: "Trip Guide",
-      description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-      tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
-        },
-        {
-          name: "css",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
-    },
+
   ];
   
   export { services, technologies, experiences, testimonials, projects };
