@@ -16,7 +16,8 @@ app.use(cors({
 
 app.use(express.json());
 
-// Initialize GitHub AI client configuration
+// Initialize GitHub AI client
+const githubToken = process.env.GITHUB_TOKEN;
 const endpoint = "https://models.github.ai/inference";
 const model = "openai/gpt-4.1";
 
@@ -37,13 +38,6 @@ app.post("/api/haiku", async (req, res) => {
   
   try {
     console.log("Calling GitHub AI API...");
-    
-    const githubToken = process.env.GITHUB_TOKEN;
-    
-    if (!githubToken) {
-      console.error("GitHub token not found in environment variables");
-      return res.status(500).json({ error: "GitHub token not configured" });
-    }
     
     const client = ModelClient(
       endpoint,
