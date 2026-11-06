@@ -13,7 +13,7 @@ const Servicecard=({index, title, icon})=>{
     <Tilt className='xs:w-[250px] w-full'>
       <motion.div
         variants={fadeIn("right", "spring", 0.5*index, 0.75)}
-        className=' ="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+        className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
         >
           <div
             options={{
@@ -45,11 +45,11 @@ const Servicecard=({index, title, icon})=>{
 
       <motion.p 
         variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] max-w-3x1 leading-[30px]'>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam facilis commodi enim unde explicabo perspiciatis impedit repudiandae officia hic? Doloribus exercitationem nesciunt porro veritatis repellendus magnam deleniti. Autem, similique ipsa?
+        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'>
+          I'm a Computer Science student at IIT Kharagpur and a software engineering intern who likes building backend-heavy, full-stack systems. I enjoy systems programming, backend architecture and machine learning — from a production RAG platform serving hundreds of users to exploring machine translation for low-resource Indic languages — and I still make games in Unity on the side.
 
       </motion.p>
-      <div className='mt-20 flex flex-gap gap-10'>
+      <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service, index)=>(
           <Servicecard key={service.title} index={index}{...service}/>
         ))}

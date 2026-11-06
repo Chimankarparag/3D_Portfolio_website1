@@ -31,17 +31,15 @@ const Computers = ({isMobile}) => {
 }
 
 const ComputersCanvas = () => {
-  const [isMobile, setIsMobile]= useState(false);
+  const [isMobile, setIsMobile]= useState(
+    () => window.matchMedia('(max-width: 500px)').matches
+  );
 
   useEffect(()=>{
 
     //Add an event listener 
 
     const mediaQuery = window.matchMedia('(max-width: 500px)');
-
-    //Set initial value of the isMobile state variable
-
-    setIsMobile(mediaQuery.matches);
 
     //define a callback function to handle changes to the media query
 

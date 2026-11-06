@@ -25,18 +25,23 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
           alt={name}
           className='w-full h-full object-cover rounded-2xl'
         />
-        <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
-          <div
-            onClick={() => window.open(source_code_link, "_blank")}
-            className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-          >
-            <img
-              src={github}
-              alt='source code'
-              className='w-1/2 h-1/2 object-contain'
-            />
+        {source_code_link && (
+          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
+            <a
+              href={source_code_link}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label={`${name} source code`}
+              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+            >
+              <img
+                src={github}
+                alt=''
+                className='w-1/2 h-1/2 object-contain'
+              />
+            </a>
           </div>
-        </div>
+        )}
       </div>
       <div className='mt-5'>
         <h3 className='text-white font-bold text-[24px]'>{name}</h3>
@@ -66,9 +71,9 @@ const Works = () => {
       <div className='w-full flex'>
         <motion.div 
         variants={fadeIn("", "", 0.1, 1)}
-        className='mt-3 text-secondary text-[17px] max-w-3x1 leading-[30px]'>
+        className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'>
           <p>
-            Following are some of the projects I have worked on. You can find the source code for each project on GitHub.
+            A selection of things I've built — from production AI platforms to research prototypes and games. Where the code is public, the card links to it on GitHub.
           </p>
         </motion.div>
       </div>

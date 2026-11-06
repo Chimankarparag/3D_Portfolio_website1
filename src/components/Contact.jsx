@@ -21,8 +21,6 @@ import { slideIn } from "../utils/motion";
 const Contact = () => {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
-  const [haiku, setHaiku] = useState("");
-  const [fetchingHaiku, setFetchingHaiku] = useState(false);
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -55,53 +53,16 @@ const Contact = () => {
       },
       '_ho2Dd8pbxRfJ7GFr'
     )
-    .then(()=> {
+    .then(() => {
       setLoading(false);
       alert('Thank you. I will get back to you as soon as possible.');
-
-      setForm({
-        name: "",
-        email: "",
-        message: "",
-
-      }),(error) =>{
-        setLoading(false);
-        console.log(error);
-        alert('something went wrong.');
-      }
+      setForm({ name: "", email: "", message: "" });
     })
-  }
-
-  const getHaiku = async () => {
-    try {
-      setFetchingHaiku(true);
-      console.log("Fetching haiku...");
-      
-      const res = await fetch("http://localhost:5001/api/haiku", {
-        method: "POST",
-        headers: { 
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ prompt: "write a haiku about AI" }),
-      });
-      
-      console.log("Response status:", res.status);
-      
-      if (!res.ok) {
-        const errorText = await res.text();
-        console.error("Error response:", errorText);
-        throw new Error(`API request failed with status ${res.status}: ${errorText}`);
-      }
-      
-      const data = await res.json();
-      console.log("Haiku response:", data);
-      setHaiku(data.haiku);
-    } catch (error) {
-      console.error("Error fetching haiku:", error);
-      alert(`Failed to fetch haiku: ${error.message}`);
-    } finally {
-      setFetchingHaiku(false);
-    }
+    .catch((error) => {
+      setLoading(false);
+      console.error(error);
+      alert('Something went wrong. Please try again.');
+    });
   }
 
   return(
@@ -128,7 +89,7 @@ const Contact = () => {
               className="bg-tertiary py-4 px-6 
               placeholder:text-secondary 
               text-white rounded-lg 
-              outlined-none 
+              outline-none 
               border-none 
               font-medium"
             />  
@@ -145,7 +106,7 @@ const Contact = () => {
               className="bg-tertiary py-4 px-6 
               placeholder:text-secondary 
               text-white rounded-lg 
-              outlined-none 
+              outline-none 
               border-none 
               font-medium"
             />  
@@ -153,9 +114,9 @@ const Contact = () => {
           </label>
           <label className=" flex flex-col">
             <span className="text-white font-medium mb-4">Your Message</span>
-            <input
+            <textarea
               rows='7'
-              type="message"
+              required
               name="message"
               value={form.message}
               onChange={handleChange}
@@ -163,33 +124,18 @@ const Contact = () => {
               className="bg-tertiary py-4 px-6 
               placeholder:text-secondary 
               text-white rounded-lg 
-              outlined-none 
+              outline-none 
               border-none 
               font-medium"
             />  
 
           </label>
-          <div className="flex gap-4">
-            <button
-              type="submit"
-              className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl">
-              {loading ? "Sending..." : "Send"}
-            </button>
-            
-            <button
-              type="button"
-              onClick={getHaiku}
-              className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl">
-              {fetchingHaiku ? "Loading..." : "Test Haiku API"}
-            </button>
-          </div>
-          
-          {haiku && (
-            <div className="mt-4 p-4 bg-tertiary rounded-lg">
-              <h4 className="text-white font-medium mb-2">Generated Haiku:</h4>
-              <p className="text-white whitespace-pre-line">{haiku}</p>
-            </div>
-          )}
+          <button
+            type="submit"
+            disabled={loading}
+            className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl">
+            {loading ? "Sending..." : "Send"}
+          </button>
         </form>
       </motion.div>
 

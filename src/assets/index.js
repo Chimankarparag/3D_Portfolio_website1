@@ -30,6 +30,10 @@ import soulmagician from "./soulmagician.png";
 import IFSS from "./IFSS.png";
 import tripguide from "./tripguide.png";
 
+import vidyasetuCover from "./covers/vidyasetu.svg";
+import planktonCover from "./covers/plankton.svg";
+import indicCover from "./covers/indic.svg";
+
 export {
   logo,
   backend,
@@ -59,4 +63,7 @@ export {
   soulmagician,
   IFSS,
   tripguide,
+  vidyasetuCover,
+  planktonCover,
+  indicCover,
 };

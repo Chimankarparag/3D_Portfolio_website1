@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { styles} from "../styles";
 
 import { staggerContainer } from "../utils/motion";
-import { Component } from "lucide-react";
 
 const SectionWrapper = (Component, idName)=>
     // HOC (Higher Order Component) to wrap the component with a section

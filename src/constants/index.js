@@ -1,28 +1,24 @@
 import {
     mobile,
     backend,
-    creator,
     web,
     javascript,
     typescript,
     html,
     css,
     reactjs,
-    redux,
     tailwind,
     nodejs,
     mongodb,
     git,
-    figma,
     docker,
-    meta,
     starbucks,
-    tesla,
-    shopify,
     IFSS,
     soulmagician,
-    tripguide,
     threejs,
+    vidyasetuCover,
+    planktonCover,
+    indicCover,
   } from "../assets";
   
   export const navLinks = [
@@ -42,21 +38,17 @@ import {
   
   const services = [
     {
-      title: "Web Developer",
+      title: "Backend & Full-Stack Developer",
       icon: web,
+    },
+    {
+      title: "ML & NLP",
+      icon: backend,
     },
     {
       title: "Game Developer",
       icon: mobile,
     },
-    {
-      title: "Learning ML",
-      icon: backend,
-    },
-    // {
-    //   title: "Content Creator",
-    //   icon: creator,
-    // },
   ];
   
   const technologies = [
@@ -118,45 +110,6 @@ import {
         "Junior Developer, Senior Developer, Head of Game Development",
       ],
     },
-    // {
-    //   title: "React Native Developer",
-    //   company_name: "Tesla",
-    //   icon: tesla,
-    //   iconBg: "#E6DEDD",
-    //   date: "Jan 2021 - Feb 2022",
-    //   points: [
-    //     "Developing and maintaining web applications using React.js and other related technologies.",
-    //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-    //     "Implementing responsive design and ensuring cross-browser compatibility.",
-    //     "Participating in code reviews and providing constructive feedback to other developers.",
-    //   ],
-    // },
-    // {
-    //   title: "Web Developer",
-    //   company_name: "Shopify",
-    //   icon: shopify,
-    //   iconBg: "#383E56",
-    //   date: "Jan 2022 - Jan 2023",
-    //   points: [
-    //     "Developing and maintaining web applications using React.js and other related technologies.",
-    //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-    //     "Implementing responsive design and ensuring cross-browser compatibility.",
-    //     "Participating in code reviews and providing constructive feedback to other developers.",
-    //   ],
-    // }, 
-    // {
-    //   title: "Full stack Developer",
-    //   company_name: "Meta",
-    //   icon: meta,
-    //   iconBg: "#E6DEDD",
-    //   date: "Jan 2023 - Present",
-    //   points: [
-    //     "Developing and maintaining web applications using React.js and other related technologies.",
-    //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-    //     "Implementing responsive design and ensuring cross-browser compatibility.",
-    //     "Participating in code reviews and providing constructive feedback to other developers.",
-    //   ],
-    // },
   ];
   
   const testimonials = [
@@ -187,6 +140,40 @@ import {
   ];
   
   const projects = [
+    {
+      name: "VidyaSetu | RAG Platform",
+      description:
+        "Production RAG platform serving 300+ users and 10,000+ queries, built on FastAPI, Pinecone, Gemini embeddings and GPT-4.1. Modular backend on MongoDB Atlas with scheduled Scrapy/Playwright/OCR data pipelines, JWT auth, prompt-injection protection and Sentry monitoring. Containerized with Docker and Nginx, deployed through GCP Cloud Build CI/CD.",
+      tags: [
+        { name: "FastAPI", color: "blue-text-gradient" },
+        { name: "Pinecone", color: "green-text-gradient" },
+        { name: "MongoDB", color: "pink-text-gradient" },
+        { name: "Docker", color: "blue-text-gradient" },
+      ],
+      image: vidyasetuCover,
+    },
+    {
+      name: "Marine Plankton Microscopy | SIH 2025",
+      description:
+        "Smart India Hackathon 2025 (Team Gradient, SIH25043): an embedded microscopy system to identify and count microscopic marine organisms. Trained a classifier reaching 99.37% ROC-AUC on the provided dataset and validated it on a Raspberry Pi running Linux.",
+      tags: [
+        { name: "Machine Learning", color: "blue-text-gradient" },
+        { name: "Raspberry Pi", color: "green-text-gradient" },
+        { name: "Embedded", color: "pink-text-gradient" },
+      ],
+      image: planktonCover,
+    },
+    {
+      name: "Indic Educational Resources | BTech Project",
+      description:
+        "Ongoing research on a multimodal generative framework for culturally grounded educational resources in low-resource Indic languages, built on transformer-based machine translation models.",
+      tags: [
+        { name: "NLP", color: "blue-text-gradient" },
+        { name: "Machine Translation", color: "green-text-gradient" },
+        { name: "Transformers", color: "pink-text-gradient" },
+      ],
+      image: indicCover,
+    },
     {
       name: "IFSS | SWE Course Project",
       description:
